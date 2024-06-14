@@ -1,109 +1,159 @@
-(function ($) {
-    "use strict";
-    
-    // loader
-    var loader = function () {
-        setTimeout(function () {
-            if ($('#loader').length > 0) {
-                $('#loader').removeClass('show');
-            }
-        }, 1);
-    };
-    loader();
-    
-    
-    // Initiate the wowjs
-    new WOW().init();
-    
-    
-    // Back to top button
-    $(window).scroll(function () {
-        if ($(this).scrollTop() > 200) {
-            $('.back-to-top').fadeIn('slow');
-        } else {
-            $('.back-to-top').fadeOut('slow');
-        }
-    });
-    $('.back-to-top').click(function () {
-        $('html, body').animate({scrollTop: 0}, 1500, 'easeInOutExpo');
-        return false;
-    });
-    
-    
-    // Sticky Navbar
-    $(window).scroll(function () {
-        if ($(this).scrollTop() > 0) {
-            $('.navbar').addClass('nav-sticky');
-        } else {
-            $('.navbar').removeClass('nav-sticky');
-        }
-    });
-    
-    
-    // Smooth scrolling on the navbar links
-    $(".navbar-nav a").on('click', function (event) {
-        if (this.hash !== "") {
-            event.preventDefault();
-            
-            $('html, body').animate({
-                scrollTop: $(this.hash).offset().top - 45
-            }, 1500, 'easeInOutExpo');
-            
-            if ($(this).parents('.navbar-nav').length) {
-                $('.navbar-nav .active').removeClass('active');
-                $(this).closest('a').addClass('active');
-            }
-        }
-    });
-    
-    
-    // Typed Initiate
-    if ($('.hero .hero-text h2').length == 1) {
-        var typed_strings = $('.hero .hero-text .typed-text').text();
-        var typed = new Typed('.hero .hero-text h2', {
-            strings: typed_strings.split(', '),
-            typeSpeed: 100,
-            backSpeed: 20,
-            smartBackspace: false,
-            loop: true
-        });
+(function() {
+    document.getElementById('txtNombre').focus();
+})();
+
+var resultados = {
+    visual: 0,
+    kinestesico: 0,
+    auditivo: 0
+  };
+
+let index = 0;
+let correctas = [];
+let preguntas = [];
+let alternativas = [];
+let rptas = [];
+const tiempo = 10;
+let countdownfunction;
+
+function validarNombre() {
+   let nombre = document.getElementById('txtNombre').value;
+   if(nombre.length === 0) {
+       alert('Por favor ingresa tu nombre');
+       document.getElementById('txtNombre').focus();
+   } else {
+       bienvenida(nombre);
+   }
+}
+
+function bienvenida(nombre) {
+
+   mostrarDiv('categoria');
+
+   let mensaje = `¡Bienvenida ${nombre}!`;
+   document.getElementById('msgHola').innerHTML = mensaje;
+
+}
+
+function cargarPreguntasTipo(tipo) {
+   
+   let titulo = '';
+   reiniciar();
+
+   if(tipo === 'A') {
+       preguntas = [
+          
+          " TEST DE ESTILOS DE APRENDIZAJE",
+       ];
+
+     
+
+   } 
+
+   document.getElementById('msgCategoria').innerHTML = titulo;
+   mostrarDiv('jugar');
+   cargarPreguntas(index);
+
+}
+
+
+
+function cargarPreguntas(indice) {
+   
+       document.getElementById('pregunta').innerHTML = preguntas[indice];
+       let opciones = "";
+       for(let j=0; j<alternativas[indice].length; j++) {
+           opciones += "<p>";
+           opciones += "<label class='lblopc'><input type='radio' class='radios' onclick='checkRpta("+j+")' name='opc' >"+ alternativas[indice][j] +"</label> ";
+           opciones += "</p>";
+       }
+       
+       document.getElementById('alternativas').innerHTML = opciones;
+       
+       iniciarTimer();
+
+}
+
+
+
+function checkRpta(rpta) {
+   
+   document.getElementById('divrpta').style.display = 'block';
+   let mensaje = "RESPUESTA INCORRECTA :(";
+   let color='red';
+   
+
+   if(rptas[index] === rpta) {
+       mensaje = "RESPUESTA CORRECTA :)";
+       correctas.push(index);
+       color='green';
+   }
+   document.getElementById('divrpta').style.background =color;
+   document.getElementById('divrpta').innerHTML = mensaje;
+   deshabilitarRadios('radios');
+
+}
+
+
+
+function mostrarDiv(div) {
+   let ocultos = document.getElementsByClassName('box');
+   for(var i=0, len=ocultos.length; i<len; i++) {
+       ocultos[i].style.display = 'none'
+   }
+   document.getElementById(div).style.display = 'block';
+}
+
+function deshabilitarRadios(radios) {
+   let rds = document.getElementsByClassName(radios);
+   for(var i=0, len=rds.length; i<len; i++) {
+       rds[i].disabled = true;
+   }
+}
+
+function reiniciar() {
+   index = 0;
+   correctas = [];
+   preguntas = [];
+   alternativas = [];
+   rptas = [];
+}
+
+function cerrarSesion(){
+   window.location.reload();
+}
+
+function evaluarResultados() {
+    var formulario = document.getElementById("formulario-estilos-aprendizaje");
+    var resultadoDiv = document.getElementById("resultado");
+  
+    for (var i = 1; i <= 7; i++) {
+      var selectedOption = document.querySelector(`input[name="pregunta${i}"]:checked`);
+      if (selectedOption) {
+        resultados[selectedOption.value]++;
+      }
+       
     }
-    
-    
-    // Skills
-    $('.skills').waypoint(function () {
-        $('.progress .progress-bar').each(function () {
-            $(this).css("width", $(this).attr("aria-valuenow") + '%');
-        });
-    }, {offset: '80%'});
-
-
-    // Testimonials carousel
-    $(".testimonials-carousel").owlCarousel({
-        center: true,
-        autoplay: true,
-        dots: true,
-        loop: true,
-        responsive: {
-            0:{
-                items:1
-            }
-        }
-    });
-    
-    
-    
-    // Portfolio filter
-    var portfolioIsotope = $('.portfolio-container').isotope({
-        itemSelector: '.portfolio-item',
-        layoutMode: 'fitRows'
-    });
-
-    $('#portfolio-filter li').on('click', function () {
-        $("#portfolio-filter li").removeClass('filter-active');
-        $(this).addClass('filter-active');
-        portfolioIsotope.isotope({filter: $(this).data('filter')});
-    });
-    
-})(jQuery);
-
+  
+    var estiloPredominante = Object.keys(resultados).reduce((a, b) => resultados[a] > resultados[b] ? a : b);
+    var mensaje;
+   
+  
+    switch (estiloPredominante) {
+        case "visual":
+          mensaje = "Tu estilo de aprendizaje predominante es Visual. Prefieres aprender mediante imágenes, diagramas y representaciones visuales.";
+          break;
+        case "kinestesico":
+          mensaje = "Tu estilo de aprendizaje predominante es Kinestésico. Prefieres aprender a través de la experiencia práctica y el movimiento.";
+          break;
+        case "auditivo":
+          mensaje = "Tu estilo de aprendizaje predominante es Auditivo. Prefieres aprender escuchando, discutiendo y participando en debates.";
+          break;
+        default:
+          mensaje = "No se pudo determinar tu estilo de aprendizaje predominante.";
+      }
+      
+      
+  
+    resultadoDiv.textContent = mensaje;
+  }
