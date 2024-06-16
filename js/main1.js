@@ -144,10 +144,10 @@ function evaluarResultados() {
           mensaje = "Tu estilo de aprendizaje predominante es Visual. Prefieres aprender mediante imágenes,"  <br> "diagramas y representaciones visuales.";
           break;
         case "kinestesico":
-          mensaje = "Tu estilo de aprendizaje predominante es Kinestésico. Prefieres aprender a través de la experiencia práctica y el movimiento.";
+          mensaje = "Tu estilo de aprendizaje predominante es Kinestésico. Prefieres aprender "  <br> "a través de la experiencia práctica y el movimiento.";
           break;
         case "auditivo":
-          mensaje = "Tu estilo de aprendizaje predominante es Auditivo. Prefieres aprender escuchando, discutiendo y participando en debates.";
+          mensaje = "Tu estilo de aprendizaje predominante es Auditivo. Prefieres aprender escuchando,"  <br> " discutiendo y participando en debates.";
           break;
         default:
           mensaje = "No se pudo determinar tu estilo de aprendizaje predominante.";
