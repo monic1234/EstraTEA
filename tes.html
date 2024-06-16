@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test de estilos de aprendizaje</title>
+    <link rel="shortcut icon" href="img/icono.png">
+    <link href="css/styl.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+
+    <div id="inicio" class="box">
+
+        <h2 style="color: rgb(9, 236, 149);"> TEST DE ESTILOS DE APRENDIZAJE </h2>
+
+        <p>
+            ¿Cuál es tu nombre?
+        </p>
+        <p>
+            <input type="text" id="txtNombre" class="textbox" placeholder="Ingresa tu nombre">
+        </p>
+        <p>
+            <img src="img/test.png" height="250" width="450"><br>
+            <button class="btn blue" onclick="validarNombre()" >ENTRAR</button>
+            <B><a href="index.html" style="color: chocolate;"> REGRESAR </a></B>
+        </p>
+
+
+    </div>
+
+    <div id="categoria" class="box oculto">
+
+        <h2 id="msgHola"></h2>
+        <h3 style="color: rgb(9, 236, 149);"> AL TEST DE ESTILOS DE APRENDIZAJE </h3>
+
+        <H3><p style="color: rgb(10, 10, 10);">Este TEST permitirá que cada estudiante identifique el estilo de aprendizaje dominante con el que se sienta más cómodo </p><h37></h37>
+
+              
+        <p>
+            <button class="btn blue" onclick="cargarPreguntasTipo('A')" >INICIAR</button> 
+           
+        </p>
+
+        
+    </div>
+
+    <div id="jugar" class="box oculto">
+
+        <div id="timer"></div>
+
+        <h2 id="msgCategoria"></h2>
+
+        <div class="preguntas">
+ 
+            <h3 id="pregunta"></h3>
+            <p>
+                <div id="formulario-estilos-aprendizaje">
+                    <form id="formulario-estilos-aprendizaje">
+                        <br>
+                        <img src="img/Recurso 20.png" height="120" width="220"><br><br>
+                        <hr size="8px" color=" coral"  width="70%"/><BR> 
+                        
+                            <p style="color: rgb(11, 11, 11);"> <b>1. ¿Si estas con amigos, ¿qué te gusta hacer más?</b></p>
+                            <div class="opciones">
+                              <label><input type="radio" name="pregunta1" value="visual"><img src="img/Recurso 35.png" height="70" width="80"></label>
+                              <label><input type="radio" name="pregunta1" value="kinestesico"><img src="img/Recurso 33.png" height="70" width="80"></label>
+                              <label><input type="radio" name="pregunta1" value="auditivo"><img src="img/Recurso 32.png" height="70" width="80"></label>
+                            </div>
+                      
+                            <p style="color: rgb(5, 5, 5);"><b>2. En tu casa, cuál es tu actividad favorita:? </b></p>
+                            <div class="opciones">
+                                <label><input type="radio" name="pregunta2" value="visual"><img src="img/Recurso 34.png" height="70" width="80"></label>
+                                <label><input type="radio" name="pregunta2" value="kinestesico"><img src="img/Recurso 24.png" height="50" width="60"></label>
+                                <label><input type="radio" name="pregunta2" value="auditivo"><img src="img/Recurso 30.png" height="50" width="60"><br></label>
+                            </div>
+                      
+                            <p style="color: rgb(4, 4, 4);"> <b>3. ¿Cómo te gusta aprender en el colegio:?</b></p>
+                            <div class="opciones">
+                                <label><input type="radio" name="pregunta3" value="visual"><img src="img/Recurso 29.png" height="50" width="60"></label>
+                                <label><input type="radio" name="pregunta3" value="kinestesico"><img src="img/Recurso 31.png" height="50" width="60"></label>
+                                <label><input type="radio" name="pregunta3" value="auditivo"><img src="img/Recurso 26.png" height="50" width="60"><br></label>
+                            </div>
+
+                            <p style="color: rgb(6, 6, 6);"><b>4. ¿Cuál prefieres? </b> </p>
+                            <div class="opciones">
+                                <label><input type="radio" name="pregunta4" value="visual"><img src="img/Recurso 37.png" height="50" width="60"></label>
+                                <label><input type="radio" name="pregunta4" value="kinestesico"><img src="img/Recurso 38.png" height="50" width="60"></label>
+                                <label><input type="radio" name="pregunta4" value="auditivo"><img src="img/Recurso 40.png" height="50" width="60"><br></label>
+                            </div>
+                                                 
+                            <p style="color: rgb(6, 6, 5);"><b>4. ¿Qué haces cuando estas feliz? </b> </p>
+                            <div class="opciones">
+                                <label><input type="radio" name="pregunta5" value="visual"><img src="img/Recurso 47.png" height="70" width="80"></label>
+                                <label><input type="radio" name="pregunta5" value="kinestesico"><img src="img/Recurso 45.png" height="50" width="60"></label>
+                                <label><input type="radio" name="pregunta5" value="auditivo"><img src="img/Recurso 46.png" height="50" width="60"><br></label>
+                            </div>
+                      
+                            <p style="color: rgb(7, 7, 7);"><b>5. ¿Qué pasatiempo prefieres:? </b></p>
+                            <div class="opciones">
+                                <label><input type="radio" name="pregunta6" value="visual"><img src="img/Recurso 25.png" height="50" width="60"></label>
+                                <label><input type="radio" name="pregunta6" value="kinestesico"><img src="img/Recurso 28.png" height="50" width="60"></label>
+                                <label><input type="radio" name="pregunta6" value="auditivo"><img src="img/Recurso 27.png" height="50" width="60"><br></label>
+                            </div>
+                    
+                            <p style="color: rgb(10, 9, 9);"><b>6. ¿Cómo aprendes algo de memoria? ?</b> </p>
+                            <div class="opciones">
+                                <label><input type="radio" name="pregunta7" value="visual"><img src="img/Recurso 39.png" height="50" width="60"></label>
+                                <label><input type="radio" name="pregunta7" value="kinestesico"><img src="img/Recurso 43.png" height="50" width="60"></label>
+                                <label><input type="radio" name="pregunta7" value="auditivo"><img src="img/Recurso 26.png" height="50" width="60"><br></label>
+                            </div>
+
+                            <p style="color: rgb(9, 9, 8);"><b>Qué materia te llama la atención  </b> </p>
+                            <div class="opciones">
+                                <label><input type="radio" name="pregunta8" value="visual"><img src="img/Recurso 42.png" height="50" width="60"></label>
+                                <label><input type="radio" name="pregunta8" value="kinestesico"><img src="img/Recurso 36.png" height="50" width="60"></label>
+                                <label><input type="radio" name="pregunta8" value="auditivo"><img src="img/Recurso 41.png" height="50" width="60"><br></label>
+                            </div>
+
+                            <br><br>
+
+                        </div>
+                        
+                        <button  class="btn blue" type="button" onclick="evaluarResultados()">Enviar</button> <br><br>
+
+                        <hr size="8px" color=" coral"  width="70%" /> <br><br>
+                    </form>
+                    
+                <div id="resultado"></div>
+
+                <hr size="8px" color=" coral"  width="70%"/><BR> <BR>
+
+                    <a href="index.html" style="color: chocolate;"> REGRESAR </a>
+            </p>
+            <div id="divrpta" class="oculto"> 
+            </div>
+             
+            
+s
+        </div>
+
+    </div>
+
+    <div id="resultados" class="box oculto">
+
+        <h2>RESULTADOS</h2>
+        <br>
+        <div id="divresultado">
+            
+        </div>
+
+        <button type="button" onclick="evaluarResultados()">RESULTADOS</button>
+    
+    <div id="resultado"></div>
+
+        <h3 class="separador" >Jugar Nuevamente</h3>
+        
+        <p>
+            <button class="btn blue" onclick="cargarPreguntasTipo('A')" >INCICAR</button>
+            &nbsp;&nbsp;
+            
+            <button class="btn blue" onclick="cerrarSesion()" >CERRAR SESIÓN</button>
+        </p>
+ 
+
+        
+    </div>
+   
+    
+</body>
+<script src="js/main1.js" type="text/javascript"></script>
+</html>
