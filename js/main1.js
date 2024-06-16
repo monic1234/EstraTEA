@@ -141,7 +141,7 @@ function evaluarResultados() {
   
     switch (estiloPredominante) {
         case "visual":
-          mensaje = "Tu estilo de aprendizaje predominante es Visual. Prefieres aprender mediante imágenes, diagramas y representaciones visuales.";
+          mensaje = "Tu estilo de aprendizaje predominante es Visual. Prefieres aprender mediante imágenes,"  <br> "diagramas y representaciones visuales.";
           break;
         case "kinestesico":
           mensaje = "Tu estilo de aprendizaje predominante es Kinestésico. Prefieres aprender a través de la experiencia práctica y el movimiento.";
