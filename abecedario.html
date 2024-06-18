@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="utf-8">
+    <title>Caja Inlcusiva EstraTEA</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta content="Free Website Template" name="keywords">
+    <meta content="Free Website Template" name="description">
+
+    <!-- Favicon -->
+    <link href="img/favicon.ico" rel="icon">
+
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- CSS Libraries -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
+    <link href="lib/animate/animate.min.css" rel="stylesheet">
+    <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+    <link href="lib/lightbox/css/lightbox.min.css" rel="stylesheet">
+
+    <!-- Template Stylesheet -->
+    <link href="css/style.css" rel="stylesheet">
+
+  <style>
+    .numero, .imagen-adicional {
+      width: 60px;
+      height: 60px;
+      margin: 10px;
+      display: inline-block;
+      cursor: move;
+    }
+    .espacio-numero, .espacio-imagen {
+      width: 60px;
+      height: 60px;
+      margin: 10px;
+      display: inline-block;
+      border: 4px solid rgb(251, 167, 32);
+    }
+    .oracion {
+      font-size: 24px;
+      margin-top: 20px;
+    }
+  </style>
+</head>
+
+<body data-spy="scroll" data-target=".navbar" data-offset="51">
+    <!-- Nav Bar Start -->
+    <div class="navbar navbar-expand-lg bg-light navbar-light">
+        <div class="container-fluid">
+            <a href="index.html" class="navbar-brand">EstraTEA</a>
+            <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            
+        </div>
+    </div>
+    <!-- Nav Bar End -->
+
+
+     <!-- Service Start -->
+    <div class="service" id="service">
+        <div class="container">
+
+         <div class="section-header text-center wow zoomIn" data-wow-delay="0.1s">
+          <br> <h3> <b>Completa las oración con los animales de la granja </b></h3>
+          <img src="img/Recurso 93.png" height="100" width="100">
+          <p> Desarrollar habilidad de escucha atenta y organización de información del abecedario a través de la escucha de una canción.
+              Escuchar la canción y Completa cada oración con las imagenes
+          </p>
+          <h3><b>Música</b></h3>
+       
+          <audio id="audio-player" controls>
+            <source src="soni/caballo.mp3" type="audio/mpeg">
+            Tu navegador no soporta el elemento de audio.
+          </audio>
+         </div>
+         <hr style="color: coral;" borde="5" size="70%">
+         <table><tr>
+            <td>
+        <center>
+              <div>
+            <img src="img/Recurso 90.png" alt="1" class="numero" draggable="true" ondragstart="dragStart(event)">
+            <img src="img/Recurso 89.png" alt="2" class="numero" draggable="true" ondragstart="dragStart(event)">
+            <img src="img/Recurso 88.png" alt="3" class="numero" draggable="true" ondragstart="dragStart(event)"><br>
+            <img src="img/Recurso 87.png" alt="4" class="numero" draggable="true" ondragstart="dragStart(event)">
+            <img src="img/Recurso 86.png" alt="5" class="numero" draggable="true" ondragstart="dragStart(event)">
+            <img src="img/Recurso 85.png" alt="6" class="numero" draggable="true" ondragstart="dragStart(event)">
+            <img src="img/Recurso 84.png" alt="7" class="numero" draggable="true" ondragstart="dragStart(event)">
+             
+                   </div>
+       
+       </center></td><td>   </td>
+
+<td>
+        <div class="oracion">
+            <b>
+             a b c con el  <div class="espacio-numero"></div>  jugaré . <br>
+             d e f g con el <div class="espacio-numero"></div>  bailaré. <br>
+             h i j k  pongo el <div class="espacio-numero"></div>  a caminar. <br>
+             l m n ñ o el  <div class="espacio-numero"></div>  nos miró.<br>
+             u v w tre <div class="espacio-numero"></div>  espante <br>
+             x y z ya llegamos a la <div class="espacio-numero"></div> y si <br>
+             quieres repetir vuelve a compartir que raro es  . <br>
+            
+           
+          </div>
+        </td>
+    </table>
+          <hr style="color: coral;" borde="5" size="70%"><br>
+      <center> <h2><b> <a href="index.html" style="color: rgb(53, 235, 159);">REGRESAR</a> </b></h2></center>
+    </div>
+    </div>
+
+
+  <script>
+    function dragStart(event) {
+      event.dataTransfer.setData("text/plain", event.target.outerHTML);
+    }
+
+    document.addEventListener("dragover", function(event) {
+      event.preventDefault();
+    });
+
+    document.addEventListener("drop", function(event) {
+      event.preventDefault();
+      var target = event.target;
+      var data = event.dataTransfer.getData("text/plain");
+      if (target.classList.contains('espacio-numero')) {
+        target.innerHTML = data;
+      } else if (target.classList.contains('espacio-imagen')) {
+        target.innerHTML = data;
+      }
+    });
+
+    let audioPlayer = document.getElementById("audio-player");
+
+    function toggleAudio() {
+      if (audioPlayer.paused) {
+        audioPlayer.play();
+      } else {
+        audioPlayer.pause();
+      }
+    }
+  </script>
+
+
+<!-- Back to top button -->
+<a href="#" class="btn back-to-top"><i class="fa fa-chevron-up"></i></a>
+        
+        
+<!-- Pre Loader -->
+<div id="loader" class="show">
+    <div class="loader"></div>
+</div>
+
+
+<!-- JavaScript Libraries -->
+<script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.bundle.min.js"></script>
+<script src="lib/easing/easing.min.js"></script>
+<script src="lib/wow/wow.min.js"></script>
+<script src="lib/waypoints/waypoints.min.js"></script>
+<script src="lib/typed/typed.min.js"></script>
+<script src="lib/owlcarousel/owl.carousel.min.js"></script>
+<script src="lib/isotope/isotope.pkgd.min.js"></script>
+<script src="lib/lightbox/js/lightbox.min.js"></script>
+
+<!-- Contact Javascript File -->
+<script src="mail/jqBootstrapValidation.min.js"></script>
+<script src="mail/contact.js"></script>
+
+<!-- Template Javascript -->
+<script src="js/main.js"></script>
+</body>
+</html>
+
+
+
