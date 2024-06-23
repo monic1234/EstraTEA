@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">   
     <title>Caja Inlcusiva EstraTEA</title>
     <link rel="shortcut icon" href="img/icono.png">
 
@@ -186,6 +186,14 @@
     let isDrawing = false;
     let lastX = 0;
     let lastY = 0;
+
+      @media (max-width: 768px) {
+  .drawing-area {
+    width: 100%;
+    height: 400px;
+  }
+}
+
 
     const canvas = document.getElementById('drawing-canvas');
     const ctx = canvas.getContext('2d');
