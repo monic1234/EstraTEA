@@ -4,100 +4,89 @@
   <title>Diseña tu Aula Ideal</title>
   <link rel="shortcut icon" href="img/icono.png">
   <style>
-    body {
-      font-family: Arial, sans-serif;
-      margin: 0;
-      padding: 0;
+    .container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      background-color: #f0f0f0;
+      padding: 20px;
     }
 
-    #background-container {
-      position: relative;
-      width: 100%;
-      height: 600px;
-      overflow: hidden;
-    }
-
-    .background {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background-size: cover;
-      background-position: center;
-      display: none;
-    }
-
-    .background.active {
-      display: block;
-    }
-
-    .background-preview {
-      display: inline-block;
-      width: 100px;
-      height: 75px;
-      background-size: cover;
-      background-position: center;
-      margin-right: 10px;
-      cursor: pointer;
-    }
-
-    .draggable-container {
+    .background-options {
       display: flex;
       justify-content: center;
-      flex-wrap: wrap;
-      margin-top: 20px;
+      margin-bottom: 20px;
     }
 
-    .draggable {
-      position: relative;
-      cursor: move;
-      z-index: 1;
+    .background-options img {
       width: 100px;
       height: 100px;
-      margin-right: 20px;
+      margin: 0 10px;
+      cursor: pointer;
+      border: 2px solid transparent;
     }
 
-    .draggable img {
-      max-width: 100%;
-      max-height: 100%;
+    .background-options img.selected {
+      border-color: #007bff;
     }
 
-    #reflection-container {
+    .main-image {
+      max-width: 1200px;
+      width: 100%;
+      height: 800px;
+      border: 1px solid #ccc;
       margin-top: 20px;
-      padding: 20px;
-      background-color: #f1f1f1;
-      text-align: center;
+      background-size: cover;
+      background-position: center;
+      position: relative;
     }
 
-    #reflection-container h2 {
-      margin-top: 0;
+    .thumbnail-table {
+      display: grid;
+      grid-template-columns: repeat(8, 1fr);
+      grid-gap: 10px;
+      max-width: 1200px;
+      width: 100%;
     }
 
-    #reflection-container textarea {
-      width: 80%;
-      height: 100px;
-      font-size: 16px;
-      padding: 10px;
+    .thumbnail {
+      width: 80px;
+      height: auto;
+      border: 1px solid #ccc;
+      cursor: move;
     }
 
-    .draggable {
-  position: absolute;
-  z-index: 1;
+    .dropped-image {
+      max-width: 150px;
+      height: auto;
+      position: absolute;
+    }
+    
+    #reflection-container {
+  margin-top: 20px;
+  padding: 20px;
+  background-color: #f1f1f1;
+  text-align: center;
 }
 
-.draggable.dragging {
-  z-index: 10;
+#reflection-container h2 {
+  margin-top: 0;
 }
-    </style>
 
+#reflection-container textarea {
+  width: 100%;
+  height: 100px;
+  font-size: 16px;
+  padding: 10px;
+}
+    
 
+  </style>
 
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
   <meta content="Free Website Template" name="keywords">
   <meta content="Free Website Template" name="description">
 
-  
   <!-- Google Font -->
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
@@ -112,205 +101,150 @@
   <link href="css/style.css" rel="stylesheet">
 </head>
 
-
-
-
 <body>
+  <body data-spy="scroll" data-target=".navbar" data-offset="51">
+    <!-- Nav Bar Start -->
+    <div class="navbar navbar-expand-lg bg-light navbar-light">
+      <div class="container-fluid">
+        <a href="index.html" class="navbar-brand">EstraTEA</a>
+        <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+      </div>
+    </div>
+    <!-- Nav Bar End -->
 
-    <body data-spy="scroll" data-target=".navbar" data-offset="51">
-        <!-- Nav Bar Start -->
-        <div class="navbar navbar-expand-lg bg-light navbar-light">
-            <div class="container-fluid">
-                <a href="index.html" class="navbar-brand">EstraTEA</a>
-                <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-    
-                
-            </div>
+    <!-- Service Start -->
+    <div class="service" id="service">
+      <div class="container">
+        <div class="section-header text-center wow zoomIn" data-wow-delay="0.1s">
+          <hr size="8px" color=" coral" width="70%" />
+          <br>
+          <h3><b>Diseña tu Aula Ideal</b></h3>
+          <img src="img/numeros.png" height="100" width="100"><br>
+          <b>Desarrollar habilidad de escucha atenta y organización de información numérica a través de la escucha de una canción.
+            Escuchar la canción y Completa cada oración con las imagenes</b>
+          
+          <hr size="8px" color=" coral" width="70%" />
         </div>
-        <!-- Nav Bar End -->
-    
-    
-         <!-- Service Start -->
-        <div class="service" id="service">
-            <div class="container">
-    
-             <div class="section-header text-center wow zoomIn" data-wow-delay="0.1s">
-                <hr size="8px" color=" coral"  width="70%" /> 
-              <br> <h3> <b>Diseña tu Aula Inclusiva </b></h3>
-              <img src="img/numeros.png" height="100" width="100">
-                <div class="service-text">
-              <b></b>Idear en el aula soluciones posibles e innovadoras al crear un ambiente acorde a las características necesidades e
-                interés de los estudiantes con TEA, para favorecer su proceso de educativo, articulando los resultados arrojados 
-                en el test de estilos de aprendizajes.<b></b>
-              </p>
-                </div>
-              <hr size="8px" color=" coral"  width="70%" /> 
-            </div>
-            <br><center>
+        <br>
+        <div class="container">
+          <div class="background-options">
+            <img src="img/fondo3.jpg" onclick="setBackground(this.src)" class="selected">
+            <img src="img/fondo6.jpg" onclick="setBackground(this.src)">
+            <img src="img/fondo7.png" onclick="setBackground(this.src)">
+            <img src="img/fondo2.png" onclick="setBackground(this.src)">
+          </div>
 
-            <div class="background-preview" style="background-image: url('img/fondo2.jpg');" onclick="changeBackground(0)"></div>
-              <div class="background-preview" style="background-image: url('img/fondo3.jpg');" onclick="changeBackground(1)"></div>
-              <div class="background-preview" style="background-image: url('img/fondo6.jpg');" onclick="changeBackground(2)"></div>
-              <div class="background-preview" style="background-image: url('img/fondo7.png');" onclick="changeBackground(3)"></div>
+          <div class="thumbnail-table">
+            <img class="thumbnail" src="img/silla 2.jpg" draggable="true" ondragstart="dragStart(event)">
+            <img class="thumbnail" src="img/silla3.webp" draggable="true" ondragstart="dragStart(event)">
+            <img class="thumbnail" src="img/sofa 1.webp" draggable="true" ondragstart="dragStart(event)">
+            <img class="thumbnail" src="img/sofa2.png" draggable="true" ondragstart="dragStart(event)">
+            <img class="thumbnail" src="img/computadora1.png" draggable="true" ondragstart="dragStart(event)">
+            <img class="thumbnail" src="img/reloj1.png" draggable="true" ondragstart="dragStart(event)">
+            <img class="thumbnail" src="img/sillas.png" draggable="true" ondragstart="dragStart(event)">
+            <img class="thumbnail" src="img/tambor.png" draggable="true" ondragstart="dragStart(event)">
+            <img class="thumbnail" src="img/Recurso 92.png" draggable="true" ondragstart="dragStart(event)">
+            <img class="thumbnail" src="img/papelera.png" draggable="true" ondragstart="dragStart(event)">
+            <img class="thumbnail" src="img/lampara.png" draggable="true" ondragstart="dragStart(event)">
+            <img class="thumbnail" src="img/jueguete 3.png" draggable="true" ondragstart="dragStart(event)">
+            <img class="thumbnail" src="img/estanteria1.png" draggable="true" ondragstart="dragStart(event)">
+            <img class="thumbnail" src="img/estanteria3.png" draggable="true" ondragstart="dragStart(event)">
+            <img class="thumbnail" src="img/guitarra.png" draggable="true" ondragstart="dragStart(event)">
+            <img class="thumbnail" src="img/Aula.png" draggable="true" ondragstart="dragStart(event)">
+          </div>
+          <div class="main-image" ondragover="dragOver(event)" ondrop="drop(event)">
+          </div>
+        </div>
 
-              <div id="background-container">
-                <div class="background active" style="background-image: url('img/fondo2.jpg');"></div>
-                <div class="background" style="background-image: url('img/fondo3.jpg');"></div>
-                <div class="background" style="background-image: url('img/fondo6.jpg');"></div>
-                <div class="background" style="background-image: url('img/fondo7.png');"></div>
-              </div>
-            
-              <div class="draggable-container">
-                <div class="draggable" data-item="desk">
-                  <img src="img/estanteria1.png" alt="">
-                </div>
-                <div class="draggable" data-item="chair">
-                  <img src="img/estanteria3.png" alt="Silla">
-                </div>
-                <div class="draggable" data-item="bookshelf">
-                  <img src="img/reloj1.png" alt="Estantería">
-                </div>
-                <div class="draggable" data-item="whiteboard">
-                  <img src="img/silla2.jpg" alt="Pizarra">
-                </div>
-                <div class="draggable" data-item="computer">
-                  <img src="img/computadora1.png" alt="Computadora">
-                </div>
-                <div class="draggable" data-item="clock">
-                  <img src="img/reloj2.png" alt="Reloj">
-                </div>
-                <div class="draggable" data-item="plant">
-                  <img src="img/planta1.png" alt="Planta">
-                </div>
-                <div class="draggable" data-item="trash">
-                  <img src="img/papelera1.png" alt="Papelera">
-                </div>
-                <div class="draggable" data-item="projector">
-                  <img src="img/proyector1.png" alt="Proyector">
-                </div>
-                <div class="draggable" data-item="speaker">
-                  <img src="img/altavoz1.png" alt="Altavoz">
-                </div>
-                <div class="draggable" data-item="books">
-                  <img src="img/jueguete 3.png" alt="Libros">
-                </div>
-                <div class="draggable" data-item="table">
-                  <img src="img/silla 2.jpg" alt="Mesa">
-                </div>
-                <div class="draggable" data-item="locker">
-                  <img src="img/sofa2.png" alt="Casillero">
-                </div>
-                <div class="draggable" data-item="board">
-                  <img src="img/sofa 1.webp" alt="Pizarra">
-                </div>
-                <div class="draggable" data-item="poster">
-                  <img src="img/lampara.png" alt="Poster">
-                </div>
-              </div><br><br><br>
+        <br>
+        <hr size="8px" color=" coral" width="70%" /><br>
 
-              <div id="reflection-container">
-                <h2>Reflexión Final</h2>
-                <p>Responde a estas preguntas después de diseñar tu aula ideal:</p><h5></h5>
-                <textarea id="reflection-textarea">
-              1. ¿Que ventajas y/o desventajas generaron los cambios.  
-              
-              2. ¿Como puedo mejorar  
-              
-              3. ¿¿Qué elementos necesito adicionar?
-              
-              4. Crear nuevas ideas.
-            </textarea></h7>
-                <button id="reflection-button">Mostrar Reflexión</button>
-              
-              
+        <div id="reflection-container">
+          <h2>Reflexión Final</h2>
+          <p>Responde a estas preguntas después de diseñar tu aula ideal:</p>
+          <h5></h5>
+          <textarea id="reflection-textarea">
+            1. ¿Qué elementos del aula consideras más importantes para favorecer el aprendizaje de los estudiantes? Explica tu respuesta.
 
-  <h2><b></b> <a href="index.html" style="color: rgb(53, 235, 159);">REGRESAR</a> </b></h2>
+            2. ¿Cómo crees que la distribución de los muebles y recursos en el aula puede influir en la dinámica de la clase? Comenta al respecto.
+
+            3. ¿Qué elementos decorativos o ambientales incorporarías en el aula para crear un espacio acogedor y motivador? Justifica tu elección.
+
+            4. ¿Qué aspectos ergonómicos tendrías en cuenta al diseñar el aula (iluminación, ventilación, mobiliario, etc.)? Explica su importancia para el bienestar de los estudiantes.
+          </textarea>
+          <button id="reflection-button">Mostrar Reflexión</button>
+
+          <h2><b></b> <a href="index.html" style="color: rgb(53, 235, 159);">REGRESAR</a> </b></h2>
 
   </div>
   
   <script>
-     var backgroundContainers = document.getElementsByClassName('background');
-    var backgroundPreviews = document.getElementsByClassName('background-preview');
-    var draggableItems = document.getElementsByClassName('draggable');
-    var reflectionTextarea = document.getElementById('reflection-textarea');
-    var reflectionButton = document.getElementById('reflection-button');
+     let currentDropTarget = null;
+    let selectedBackground = document.querySelector('.background-options img.selected').src;
 
-    // Función para cambiar el fondo activo
-    function changeBackground(index) {
-      for (var i = 0; i < backgroundContainers.length; i++) {
-        backgroundContainers[i].classList.remove('active');
-      }
-      backgroundContainers[index].classList.add('active');
-    }
-
-    // Función para hacer los elementos arrastrables
-    function makeDraggable() {
-      for (var i = 0; i < draggableItems.length; i++) {
-        draggableItems[i].addEventListener('mousedown', startDragging);
-        draggableItems[i].addEventListener('mouseup', stopDragging);
-      }
-    }
-
-    // Función para iniciar el arrastre de un elemento
-    function startDragging(event) {
-      var item = event.target.closest('.draggable');
-      item.classList.add('dragging');
-      var initialX = event.clientX - item.offsetLeft;
-      var initialY = event.clientY - item.offsetTop;
-      item.dataset.initialX = initialX;
-      item.dataset.initialY = initialY;
-      document.addEventListener('mousemove', drag);
-    }
-
-    // Función para mover el elemento durante el arrastre
-    function drag(event) {
-      var item = document.querySelector('.dragging');
-      if (item) {
-        event.preventDefault();
-        var x = event.clientX - item.dataset.initialX;
-        var y = event.clientY - item.dataset.initialY;
-        item.style.left = x + 'px';
-        item.style.top = y + 'px';
-
-        item.style.zIndex = 10;
-      }
-    }
-
-    // Función para detener el arrastre de un elemento
-    function stopDragging(event) {
-      var item = event.target.closest('.draggable');
-      item.classList.remove('dragging');
-      document.removeEventListener('mousemove', drag);
-    }
-
-    // Función para mostrar la reflexión final
-    function showReflection() {
-      var reflection = reflectionTextarea.value;
-      alert('Tu reflexión final:\n\n' + reflection);
-    }
-
-    // Inicializar la página
-    changeBackground(0);
-    makeDraggable();
-
-    // Agregar evento de click a los botones de fondo
-    for (var i = 0; i < backgroundPreviews.length; i++) {
-      backgroundPreviews[i].addEventListener('click', function() {
-        changeBackground(Array.from(backgroundPreviews).indexOf(this));
+    function setBackground(src) {
+      selectedBackground = src;
+      document.querySelector('.main-image').style.backgroundImage = `url(${src})`;
+      document.querySelectorAll('.background-options img').forEach(img => {
+        img.classList.remove('selected');
       });
+      event.target.classList.add('selected');
     }
 
+    function dragStart(event) {
+      event.dataTransfer.setData('text/plain', event.target.src);
+    }
+
+    function dragOver(event) {
+      event.preventDefault();
+      currentDropTarget = event.target;
+    }
+
+    function drop(event) {
+      event.preventDefault();
+      if (currentDropTarget && currentDropTarget.classList.contains('main-image')) {
+        const imgSrc = event.dataTransfer.getData('text/plain');
+        const newImg = document.createElement('img');
+        newImg.src = imgSrc;
+        newImg.classList.add('dropped-image');
+        newImg.style.left = event.clientX - 75 + 'px';
+        newImg.style.top = event.clientY - 75 + 'px';
+        currentDropTarget.appendChild(newImg);
+      }
+      currentDropTarget = null;
+    }
+
+    document.addEventListener('dragover', dragOver);
+    document.addEventListener('drop', drop);
+
+    // Establecer la imagen de fondo seleccionada por defecto
+    setBackground(document.querySelector('.background-options img.selected').src);
+  
     // Agregar evento de click al botón de reflexión
     reflectionButton.addEventListener('click', showReflection);
+
+    function dragStart(event) {
+      event.dataTransfer.setData("text/plain", event.target.outerHTML);
+    }
+
+    document.addEventListener("dragover", function(event) {
+      event.preventDefault();
+    });
+
+    document.addEventListener("drop", function(event) {
+      event.preventDefault();
+      var target = event.target;
+      var data = event.dataTransfer.getData("text/plain");
+      if (target.classList.contains('espacio-numero')) {
+        target.innerHTML = data;
+      } else if (target.classList.contains('espacio-imagen')) {
+        target.innerHTML = data;
+      }
+    });
+
+
   </script>
 </body>
 </html>
-
-
-
-
-
-
-
