@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Completa el Calendario</title>
+  <link rel="shortcut icon" href="img/icono.png">
+  <style>
+    #background-container {
+  position: relative;
+  width: 100%;
+  height: 600px;
+  overflow: hidden;
+}
+
+.background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-position: center;
+  display: none;
+}
+
+.background.active {
+  display: block;
+}
+
+.background-preview {
+  display: inline-block;
+  width: 100px;
+  height: 75px;
+  background-size: cover;
+  background-position: center;
+  margin-right: 10px;
+  cursor: pointer;
+}
+
+.draggable-container {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-top: 20px;
+}
+
+.draggable {
+  position: absolute;
+  cursor: move;
+  z-index: 1;
+  width: 100px;
+  height: 100px;
+  margin-right: 20px;
+}
+
+.draggable img {
+  max-width: 100%;
+  max-height: 100%;
+}
+
+.draggable.dragging {
+  z-index: 10;
+}
+
+.numero, .imagen-adicional {
+  width: 60px;
+  height: 60px;
+  margin: 10px;
+  display: inline-block;
+  cursor: move;
+}
+
+.espacio-numero, .espacio-imagen {
+  width: 100px;
+  height: 100px;
+  border: 1px solid #ccc;
+  display: inline-block;
+  margin: 10px;
+  text-align: center;
+  line-height: 100px;
+}
+
+#reflection-container {
+  margin-top: 20px;
+  padding: 20px;
+  background-color: #f1f1f1;
+  text-align: center;
+}
+
+#reflection-container h2 {
+  margin-top: 0;
+}
+
+#reflection-container textarea {
+  width: 80%;
+  height: 100px;
+  font-size: 16px;
+  padding: 10px;
+}
+
+    </style>
+
+
+
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <meta content="Free Website Template" name="keywords">
+  <meta content="Free Website Template" name="description">
+
+  
+  <!-- Google Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- CSS Libraries -->
+  <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
+  <link href="lib/animate/animate.min.css" rel="stylesheet">
+  <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+  <link href="lib/lightbox/css/lightbox.min.css" rel="stylesheet">
+
+  <!-- Template Stylesheet -->
+  <link href="css/style.css" rel="stylesheet">
+</head>
+
+
+
+
+<body>
+
+    <body data-spy="scroll" data-target=".navbar" data-offset="51">
+        <!-- Nav Bar Start -->
+        <div class="navbar navbar-expand-lg bg-light navbar-light">
+            <div class="container-fluid">
+                <a href="index.html" class="navbar-brand">EstraTEA</a>
+                <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+    
+                
+            </div>
+        </div>
+        <!-- Nav Bar End -->
+    
+    
+         <!-- Service Start -->
+        <div class="service" id="service">
+            <div class="container">
+    
+             <div class="section-header text-center wow zoomIn" data-wow-delay="0.1s">
+                <hr size="8px" color=" coral"  width="70%" /> 
+              <br> <h3> <b>Completa el calendario  </b></h3>
+              <img src="img/numeros.png" height="100" width="100"><br>
+              <b>Permite al estudiante con TEA, conocer la secuencia de numérica del 1 al 30 o 31, aprender los días de la semana, mes y años. 
+                Además de reemplazar los días de la semana con acciones u objetos que inician con la primera silaba.  </b>
+              <hr size="8px" color=" coral"  width="70%" /> 
+            </div>
+            <br><center>
+
+            <div class="background-preview" style="background-image: url('img/Calendario.png');" onclick="changeBackground(0)"></div>
+              <div class="background-preview" style="background-image: url('img/dibujo1.png');" onclick="changeBackground(1)"></div>
+              <div class="background-preview" style="background-image: url('img/dibujo1.png');" onclick="changeBackground(2)"></div>
+              <div class="background-preview" style="background-image: url('img/dibujo1.png');" onclick="changeBackground(3)"></div>
+
+              <div id="background-container">
+                <div class="background active" style="background-image: url('img/Calendario.png');"></div>
+                <div class="background" style="background-image: url('img/dibujo1.png');"></div>
+                <div class="background" style="background-image: url('img/dibujo1.png');"></div>
+                <div class="background" style="background-image: url('img/dibujo1.png');"></div>
+              </div>
+          
+              <table>
+                <tr>
+                  <td>
+                    <center>
+                      <div>
+                        <img src="img/1.png" width="50" height="50" class="numero" draggable="true" ondragstart="dragStart(event)">
+                        <img src="img/estanteria3.png" width="50" height="50" class="numero" draggable="true" ondragstart="dragStart(event)">
+                        <img src="img/reloj1.png" width="50" height="50" class="numero" draggable="true" ondragstart="dragStart(event)"><br>
+                        <img src="img/silla 2.jpg" width="50" height="50" class="numero" draggable="true" ondragstart="dragStart(event)">
+                        <img src="img/reloj2.png" width="50" height="50" class="numero" draggable="true" ondragstart="dragStart(event)">
+                        <img src="img/computadora1.png" width="50" height="50" class="numero" draggable="true" ondragstart="dragStart(event)">
+                        <img src="img/papelera.png" width="50" height="50" class="numero" draggable="true" ondragstart="dragStart(event)">
+                      </div>
+                    </center>
+                  </td>
+                  <td>
+                
+          
+            
+              
+
+                    <br><h2><b></b> <a href="index.html" style="color: rgb(53, 235, 159);">REGRESAR</a> </b></h2>
+
+  </div>
+  
+  <script>
+     var backgroundContainers = document.getElementsByClassName('background');
+    var backgroundPreviews = document.getElementsByClassName('background-preview');
+    var draggableItems = document.getElementsByClassName('draggable');
+    var reflectionTextarea = document.getElementById('reflection-textarea');
+    var reflectionButton = document.getElementById('reflection-button');
+
+    // Función para cambiar el fondo activo
+    function changeBackground(index) {
+      for (var i = 0; i < backgroundContainers.length; i++) {
+        backgroundContainers[i].classList.remove('active');
+      }
+      backgroundContainers[index].classList.add('active');
+    }
+
+   
+
+    // Función para iniciar el arrastre de un elemento
+    function startDragging(event) {
+      var item = event.target.closest('.draggable');
+      item.classList.add('dragging');
+      var initialX = event.clientX - item.offsetLeft;
+      var initialY = event.clientY - item.offsetTop;
+      item.dataset.initialX = initialX;
+      item.dataset.initialY = initialY;
+      document.addEventListener('mousemove', drag);
+    }
+
+    // Función para mover el elemento durante el arrastre
+    function drag(event) {
+      var item = document.querySelector('.dragging');
+      if (item) {
+        event.preventDefault();
+        var x = event.clientX - item.dataset.initialX;
+        var y = event.clientY - item.dataset.initialY;
+        item.style.left = x + 'px';
+        item.style.top = y + 'px';
+
+        item.style.zIndex = 10;
+      }
+    }
+
+    // Función para detener el arrastre de un elemento
+    function stopDragging(event) {
+      var item = event.target.closest('.draggable');
+      item.classList.remove('dragging');
+      document.removeEventListener('mousemove', drag);
+    }
+
+    // Función para mostrar la reflexión final
+    function showReflection() {
+      var reflection = reflectionTextarea.value;
+      alert('Tu reflexión final:\n\n' + reflection);
+    }
+
+    // Inicializar la página
+    changeBackground(0);
+    makeDraggable();
+
+    // Agregar evento de click a los botones de fondo
+    for (var i = 0; i < backgroundPreviews.length; i++) {
+      backgroundPreviews[i].addEventListener('click', function() {
+        changeBackground(Array.from(backgroundPreviews).indexOf(this));
+      });
+    }
+
+
+
+  </script>
+</body>
+</html>
+
+
+
+
+
+
+
