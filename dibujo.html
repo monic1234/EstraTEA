@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Caja Inlcusiva EstraTEA</title>
+    <link rel="shortcut icon" href="img/icono.png">
+
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- CSS Libraries -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
+    <link href="lib/animate/animate.min.css" rel="stylesheet">
+    <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+    <link href="lib/lightbox/css/lightbox.min.css" rel="stylesheet">
+
+    <!-- Template Stylesheet -->
+    <link href="css/style.css" rel="stylesheet">
+  
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: Arial, sans-serif;
+    }
+
+
+    @media (max-width: 768px) {
+  .drawing-area {
+    width: 100%;
+    height: 400px;
+  }
+}
+
+    .container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      background-color: #f0f0f0;
+    }
+
+    .image-options {
+      display: flex;
+      justify-content: center;
+      margin-bottom: 20px;
+    }
+
+    table td {
+        
+    width: 500px;
+  }
+    .image-options img {
+      width: 100px;
+      height: 100px;
+      margin: 0 10px;
+      cursor: pointer;
+    }
+
+    .color-palette {
+      display: flex;
+      justify-content: center;
+      margin-bottom: 20px;
+    }
+
+    .color-box {
+      width: 30px;
+      height: 30px;
+      margin: 0 5px;
+      cursor: pointer;
+      border: 1px solid #ccc;
+    }
+
+    .line-thickness {
+      margin-bottom: 20px;
+    }
+
+    .drawing-area {
+      width: 900px;
+      height: 687px;
+      background-color: #ffffff;
+      border: 1px solid #ccc;
+      margin: 0 auto;
+      position: relative;
+    }
+
+    #drawing-canvas {
+      width: 100%;
+      height: 100%;
+    }
+
+    .clear-button {
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      padding: 5px 10px;
+      background-color: #ff0000;
+      color: #fff;
+      border: none;
+      cursor: pointer;
+    }
+  </style>
+</head>
+
+<body >
+
+    <!-- Nav Bar Start -->
+    <div class="navbar navbar-expand-lg bg-light navbar-light">
+        <div class="container-fluid">
+            <a href="index.html" class="navbar-brand">EstraTEA</a>
+            <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+        </div>
+    </div>
+    <!-- Nav Bar End -->
+
+
+     <!-- Service Start -->
+   
+     <br><h1><center> <b>Grafomotricidad   </b></h1><br></center>
+  
+     <center><table >
+        <tr><td width="400">
+          <center>  <img src="img/Recurso 92.png" height="150" width="150"> 
+          <center><p> <b> Es una actividad de integración sensorial que involucra 
+            estímulos visuales y táctiles en los niños y niñas con TEA, afianzando 
+            su capacidad perceptiva, motriz y cognitivas. </b><br></center>
+          </p>
+          
+          <td>
+            <p> <b> Instruciones <br> <br> 1.  Escuchar la canción y en la hoja en blanco siga las consignas <br>
+              2. realizar trazos, líneas curvas y rectas en diferentes direcciones, para potencializar
+               y estimular la expresión plástica y acercamiento a la grafía.   <br>
+               3. Uso tu color favorito, para seguir la secuencia de la espiral, 
+               fortaleciendo el trazo y agarre en diferentes tamaños. <br>
+               4. Sigue la linea con puntos y con ayuda de tu lapiz remarca la secuencia. <br>
+               5. Ayuda a la cabra a llegar a su alimento.  
+            </p></b>
+          </td>
+
+         </div>
+        </tr>
+    </table></center>
+   
+         <hr style="color: coral;" borde="5" size="70%"><br><br>
+         <br><br> <br>         
+          
+  <div class="container">
+    <div class="image-options">
+      <center><img src="img/dibujo1.png" onclick="selectImage(this)">
+      <img src="img/dibujo2.jpg" onclick="selectImage(this)"></center>
+      <img src="img/dibujo3.png" onclick="selectImage(this)">
+      <img src="img/dibujo4.png" onclick="selectImage(this)">
+      <img src="img/fondo7.png" onclick="selectImage(this)">
+    </div>
+    <div class="color-palette">
+      <div class="color-box" style="background-color: #FF0000;" onclick="selectColor(this)"></div>
+      <div class="color-box" style="background-color: #00FF00;" onclick="selectColor(this)"></div>
+      <div class="color-box" style="background-color: #0000FF;" onclick="selectColor(this)"></div>
+      <div class="color-box" style="background-color: #FFFF00;" onclick="selectColor(this)"></div>
+      <div class="color-box" style="background-color: #00FFFF;" onclick="selectColor(this)"></div>
+      <div class="color-box" style="background-color: #FF00FF;" onclick="selectColor(this)"></div>
+      <div class="color-box" style="background-color: #800080;" onclick="selectColor(this)"></div>
+      <div class="color-box" style="background-color: #008080;" onclick="selectColor(this)"></div>
+      <div class="color-box" style="background-color: #800000;" onclick="selectColor(this)"></div>
+      <div class="color-box" style="background-color: #58f358;" onclick="selectColor(this)"></div>
+      <div class="color-box" style="background-color: #030303;" onclick="selectColor(this)"></div>
+      <div class="color-box" style="background-color: #e86b0c;" onclick="selectColor(this)"></div>
+      <div class="color-box" style="background-color: #ca08df;" onclick="selectColor(this)"></div>
+      <div class="color-box" style="background-color: #f0f3f0;" onclick="selectColor(this)"></div>
+    </div>
+    <div class="line-thickness">
+      <label for="lineWidth">Grosor de la línea:</label>
+      <input type="range" id="lineWidth" min="1" max="20" value="5" onchange="updateLineWidth()">
+    </div>
+    <table>
+      <tr>
+    <td>
+    <div class="video-container">
+      <iframe width="460" height="315" src="https://www.youtube.com/embed/So60P5-8a5g" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    </div>
+  </center> </td> <td>
+    <div class="drawing-area">
+      <canvas id="drawing-canvas" width="550" height="400"></canvas>
+      <button class="clear-button" onclick="clearCanvas()">Borrar</button>
+    </div></td>
+  </div></tr>
+</table>
+  <br> <center> <h2><b> <a href="index.html" style="color: rgb(53, 235, 159);">REGRESAR</a> </b></h2></center>
+</div>
+</div>
+
+  <script>
+    let selectedImage = null;
+    let selectedColor = '#000000';
+    let lineWidth = 5;
+    let isDrawing = false;
+    let lastX = 0;
+    let lastY = 0;
+
+    
+
+    const canvas = document.getElementById('drawing-canvas');
+    const ctx = canvas.getContext('2d');
+
+    function selectImage(img) {
+      selectedImage = img.src;
+      const background = document.querySelector('.drawing-area');
+      background.style.backgroundImage = `url(${selectedImage})`;
+      background.style.backgroundSize = 'cover';
+    }
+
+    function selectColor(colorBox) {
+      selectedColor = window.getComputedStyle(colorBox).backgroundColor;
+      ctx.strokeStyle = selectedColor;
+    }
+
+    function updateLineWidth() {
+      lineWidth = document.getElementById('lineWidth').value;
+      ctx.lineWidth = lineWidth;
+    }
+
+    canvas.addEventListener('mousedown', (e) => {
+      isDrawing = true;
+      lastX = e.offsetX;
+      lastY = e.offsetY;
+    });
+
+    canvas.addEventListener('mousemove', (e) => {
+      if (!isDrawing) return;
+
+      ctx.beginPath();
+      ctx.moveTo(lastX, lastY);
+      ctx.lineTo(e.offsetX, e.offsetY);
+      ctx.stroke();
+
+      lastX = e.offsetX;
+      lastY = e.offsetY;
+    });
+
+    canvas.addEventListener('mouseup', () => {
+      isDrawing = false;
+    });
+
+    function clearCanvas() {
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
+    }
+  </script>
+</body>
+</html>
