@@ -269,3 +269,90 @@
 
 
 
+                
+          
+            
+              
+
+                    <br><h2><b></b> <a href="index.html" style="color: rgb(53, 235, 159);">REGRESAR</a> </b></h2>
+
+  </div>
+  
+  <script>
+     var backgroundContainers = document.getElementsByClassName('background');
+    var backgroundPreviews = document.getElementsByClassName('background-preview');
+    var draggableItems = document.getElementsByClassName('draggable');
+    var reflectionTextarea = document.getElementById('reflection-textarea');
+    var reflectionButton = document.getElementById('reflection-button');
+
+    // Función para cambiar el fondo activo
+    function changeBackground(index) {
+      for (var i = 0; i < backgroundContainers.length; i++) {
+        backgroundContainers[i].classList.remove('active');
+      }
+      backgroundContainers[index].classList.add('active');
+    }
+
+   
+
+    // Función para iniciar el arrastre de un elemento
+    function startDragging(event) {
+      var item = event.target.closest('.draggable');
+      item.classList.add('dragging');
+      var initialX = event.clientX - item.offsetLeft;
+      var initialY = event.clientY - item.offsetTop;
+      item.dataset.initialX = initialX;
+      item.dataset.initialY = initialY;
+      document.addEventListener('mousemove', drag);
+    }
+
+    // Función para mover el elemento durante el arrastre
+    function drag(event) {
+      var item = document.querySelector('.dragging');
+      if (item) {
+        event.preventDefault();
+        var x = event.clientX - item.dataset.initialX;
+        var y = event.clientY - item.dataset.initialY;
+        item.style.left = x + 'px';
+        item.style.top = y + 'px';
+
+        item.style.zIndex = 10;
+      }
+    }
+
+    // Función para detener el arrastre de un elemento
+    function stopDragging(event) {
+      var item = event.target.closest('.draggable');
+      item.classList.remove('dragging');
+      document.removeEventListener('mousemove', drag);
+    }
+
+    // Función para mostrar la reflexión final
+    function showReflection() {
+      var reflection = reflectionTextarea.value;
+      alert('Tu reflexión final:\n\n' + reflection);
+    }
+
+    // Inicializar la página
+    changeBackground(0);
+    makeDraggable();
+
+    // Agregar evento de click a los botones de fondo
+    for (var i = 0; i < backgroundPreviews.length; i++) {
+      backgroundPreviews[i].addEventListener('click', function() {
+        changeBackground(Array.from(backgroundPreviews).indexOf(this));
+      });
+    }
+
+
+
+  </script>
+</body>
+</html>
+
+
+
+
+
+
+
